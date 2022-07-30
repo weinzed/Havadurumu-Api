@@ -10,6 +10,8 @@
 </html>
 
 <?php
+error_reporting(0);
+
 if(!$_POST)
 {
     die();
@@ -18,7 +20,7 @@ $il = $_POST['il'];
 $gethavadurum = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=$il&appid=25ec0272aff270b3df4dad40b01329f3&units=metric&lang=tr");
 if(str_contains($gethavadurum, 'city not found'))
 {
-    echo "<script>alert('İl bulunamadı');</script>";
+    echo "İL BULUNAMADI";
     die();
 }
 
